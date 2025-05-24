@@ -33,3 +33,13 @@ input_df = pd.DataFrame([user_input])
 if st.button("Predict Price"):
     prediction = model.predict(input_df)
     st.success(f"💰 Estimated Price: ${prediction[0]:,.2f}")
+    st.balloons()  # 🎈 Celebration!
+
+# ✍️ Add credits at the bottom
+st.markdown("---")
+st.markdown(
+    """
+    👨‍💻 Built with ❤️ by **Mayan Kumar**  
+    📘 [View Source on GitHub](https://github.com/Mayan-kr/melbourne-house-price-predictor)
+    """
+)
