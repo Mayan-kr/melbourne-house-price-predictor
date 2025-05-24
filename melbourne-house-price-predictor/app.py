@@ -3,8 +3,15 @@ import pandas as pd
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 
+import os
+st.write("Files in current directory:", os.listdir())
+
 # Load and prepare data
-df = pd.read_csv("melb_data.csv")
+from pathlib import Path
+
+csv_path = Path(__file__).parent / "melb_data.csv"
+df = pd.read_csv(csv_path)
+
 df = df.dropna(axis=0)
 
 y = df.Price
